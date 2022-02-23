@@ -1,0 +1,148 @@
+<header class="header">
+            <nav class="header-nav">
+                <ul class="my-nav-list">
+                    <li class="my-nav-item" ><a href="./Gtvl.php" class="my-nav-link">Trang chủ</a></li>
+                     <li class="my-nav-item">
+                      <a  class="my-nav-link" href='./vieclam.php'>Việc làm</a>
+                    </li>
+                    <li class="my-nav-item">
+                      <a  class="my-nav-link" >Mức lương</a>
+                    </li>
+                    <li class="my-nav-item">
+                        <a href="./CVmau.php" class="my-nav-link">CV mẫu</a>
+                    </li>
+                    <?php 
+                      if(isset($_SESSION['isLoggin'])){            
+                        if(isset($_SESSION['idUser2'])){
+                      ?>
+                        <li class="my-nav-item">
+                          <a href="./dangtuyendung.php" class="my-nav-link">Tuyển dụng</a>
+                        </li>
+                      <?php }else{ ?>
+                        <li class="my-nav-item">
+                          <a href="./taocv.php" class="my-nav-link">Tạo CV</a>
+                        </li>
+                      <?php } 
+                    } ?>
+                    
+                </ul>
+                <ul class="my-nav-list">
+                  <?php 
+                    if(isset($_SESSION['isLoggin'])){            
+                  ?>
+                    <?php 
+                      if(isset($_SESSION['idUser2'])){
+                    ?>
+                        <li class="my-nav-item">
+                          <a href="./baituyendung.php" class="my-nav-link">Bài Tuyển dụng</a>
+                        </li>
+                    <?php }else{ ?>
+                        <li class="my-nav-item">
+                          <a href="./CVdatao.php" class="my-nav-link">CV đã tạo</a>
+                        </li>
+                      <?php } ?>
+                  <?php } ?>
+                    <li class="my-nav-item hienthi_thongbao">
+                        <a href=" " class="my-nav-link">
+                          <a href="" class="header_icon">
+                            <i class="fas fa-bell"></i>
+                          </a>
+                          Thông báo
+                        </a>
+                        <div class="thongbao">
+                          <header class="header_thongbao">
+                            <h3>Thông báo mới nhận</h3>
+                          </header>
+                          <ul class="list_thongbao">
+                            <li class="item_list_thongbao item_list_thongbao_view">
+                              <a href="" class="link_thongbao">
+                                <img src="./image/Thiết-kế-logo-Công-ty-tnhh-cơ-điện-lạnh-tuấn-đại-phát-2.jpg" alt="" class="img_thongbao">
+                                <div class="info_thongbao">
+                                  <span class="name_thongbao">[TUYỂN GẤP] Thủ kho - đi làm ngay</span>
+                                  <span class="body_thongbao">Công ty cổ phần cơ điện lạnh T-Đ-P thông..</span>
+                                </div>
+                              </a>
+                            </li>
+                            <li class="item_list_thongbao item_list_thongbao_view">
+                              <a href="" class="link_thongbao">
+                                <img src="./image/thongbao1.png" alt="" class="img_thongbao">
+                                <div class="info_thongbao">
+                                  <span class="name_thongbao">Tạm ngưng tuyển dụng</span>
+                                  <span class="body_thongbao">Công ty Y tạm ngưng tuyển dụng chuyên viên IT</span>
+                                </div>
+                              </a>
+                            </li>
+                            <li class="item_list_thongbao item_list_thongbao_view">
+                              <a href="" class="link_thongbao">
+                                <img src="./image/thongbao3.jpg" alt="" class="img_thongbao">
+                                <div class="info_thongbao">
+                                  <span class="name_thongbao">Công ty Y thông báo tuyển dụng</span>
+                                  <span class="body_thongbao">Công ty Y thông báo tuyển dụng</span>
+                                </div>
+                              </a>
+                            </li>
+                            <li class="item_list_thongbao">
+                              <a href="" class="link_thongbao">
+                                <img src="./image/thongbao4.png" alt="" class="img_thongbao">
+                                <div class="info_thongbao">
+                                  <span class="name_thongbao">Công ty Y thông báo tuyển dụng</span>
+                                  <span class="body_thongbao">Công ty Y thông báo tuyển dụng</span>
+                                </div>
+                              </a>
+                            </li>
+                          </ul>
+                          <footer class="footer_thongbao">
+                            <a href="" class="footer_thongbao_link">
+                              Xem tất cả
+                            </a>
+                          </footer>
+                        </div>
+                    </li>
+                    <?php 
+                    if(isset($_SESSION['isLoggin'])){                      
+                    ?>
+                      <li class="my-nav-item">
+                        <a href="./dangxuat.php" class="my-nav-link ">Đăng xuất</a>
+                      </li>                      
+                    <?php }else{                    
+                    ?>
+                    <li class="my-nav-item dropdown show">
+                          <!-- <a href="./dangky.php" class="my-nav-link my-nav-item-line">Đăng ký</a> -->
+                          <a class="my-nav-link my-nav-item-line" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Đăng ký
+                          </a>
+                          <div class="dropdown-menu drd_menu" aria-labelledby="dropdownMenuLink">
+                              <a class="dropdown-item" href="./dangky.php">Người dùng</a>
+                              <a class="dropdown-item" href="./dangkyntd.php">Nhà tuyển dụng</a>
+                          </div>
+                      </li>
+                      <li class="my-nav-item">
+                        <a href="./dangnhap.php" class="my-nav-link" >Đăng nhập</a>
+                      </li>
+                    <?php }?>
+                    <?php 
+                    if(isset($_SESSION['isLoggin'])){
+                      if(isset($_SESSION['idUser2'])){
+                        $id = $_SESSION['idUser2'];
+                        $sql1 = "SELECT * FROM `nhatuyendung` WHERE IDntd='$id'";
+                        $query1 = mysqli_query($conn,$sql1 );
+                        $row = mysqli_fetch_array($query1);                   
+                    ?>
+                        <a href="./baituyendung.php" style="font-size:0;width:3.5rem;height:3.5rem;">
+                          <img style="object-fit: cover;width: 100%;height: 100%;border-radius: 83px;" src="./image/<?php echo $row['Anhdd']?>" alt="avatar"> 
+                        </a>
+                      <?php }else{ ?>
+                        <a href="#" class="header_icon2">
+                          <i class="fas fa-user-circle"></i>
+                        </a>
+                      <?php } ?>
+                    <?php }else{ ?>
+                    <a href="#" class="header_icon2">
+                      <i class="fas fa-user-circle"></i>
+                    </a>
+                    <?php } ?>
+                </ul>
+            </nav>
+    
+            
+        </header>
